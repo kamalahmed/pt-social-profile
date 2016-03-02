@@ -1,5 +1,5 @@
 # pt-social-profile
-A simple WordPress Plugin to show socials profile links on any widget areas of any wordpress theme.
+A simple WordPress Plugin to show social profile links on any widget areas of any wordpress theme.
 
 #Feature
 1. Very small size
