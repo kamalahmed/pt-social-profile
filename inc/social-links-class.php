@@ -42,7 +42,7 @@ class PT_Social_Link_Widget extends WP_Widget {
         //before widget data or classes
         echo $args['before_widget'];
       // display the front end widget's data
-        $this->ptsp_get_social_links($title, $links, $icons, $icon_size);
+        $this->ptsp_get_social_links($args, $title, $links, $icons, $icon_size);
         // after widget data or classes
         echo $args['after_widget'];
 
@@ -240,16 +240,18 @@ class PT_Social_Link_Widget extends WP_Widget {
     }
 
 
-    /**
+    /** Display All Social links
      * @param Array $links All Social links from Database
      * @param Array $icons All Social icons from Database
      * @param Int $icon_size The size of the icon to display from the Database
      */
-    public function ptsp_get_social_links($title, $links, $icons, $icon_size)
+    public function ptsp_get_social_links($args, $title, $links, $icons, $icon_size)
     {
         ?>
-        <section class="pt-social-profile">
-            <h2><?php echo esc_attr($title);?></h2>
+
+            <?php echo $args['before_title']; ?>
+            <?php echo $title;?>
+            <?php echo $args['after_title']; ?>
 
             <a href="<?php echo esc_attr($links['facebook']);?>" target="_blank">
                 <img src="<?php echo esc_attr($icons['facebook']); ?>" alt="facebook icon" width="<?php echo $icon_size."px"; ?>">
@@ -263,7 +265,6 @@ class PT_Social_Link_Widget extends WP_Widget {
             <a href="<?php echo esc_attr($links['googleplus']);?>" target="_blank">
                 <img src="<?php echo esc_attr($icons['googleplus']); ?>" alt="google plus icon" width="<?php echo $icon_size."px"; ?>">
             </a>
-        </section>
 
     <?php
     }
