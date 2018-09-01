@@ -63,6 +63,7 @@ class PT_Social_Link_Widget extends WP_Widget {
      *
      * @param array $new_instance The new options
      * @param array $old_instance The previous options
+     * @return array It returns an array of new data
      */
     public function update( $new_instance, $old_instance ) {
         // processes widget options to be saved
@@ -86,7 +87,7 @@ class PT_Social_Link_Widget extends WP_Widget {
 
     /**
      * Build the option forms for displaying in the admin
-     * @param Array $instance The Widget Options
+     * @param array $instance The Widget Options
      */
     public function ptsp_admin_form($instance)
     {
@@ -241,9 +242,10 @@ class PT_Social_Link_Widget extends WP_Widget {
 
 
     /** Display All Social links
-     * @param Array $links All Social links from Database
-     * @param Array $icons All Social icons from Database
+     * @param array $links All Social links from Database
+     * @param array $icons All Social icons from Database
      * @param Int $icon_size The size of the icon to display from the Database
+     * @return void
      */
     public function ptsp_get_social_links($args, $title, $links, $icons, $icon_size)
     {
