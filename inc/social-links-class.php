@@ -173,8 +173,8 @@ class PT_Social_Link_Widget extends WP_Widget {
         <input
             type="text"
             class="widefat"
-            id="<?php echo $this->get_field_id('twitter_icon');?>"
-            name="<?php echo $this->get_field_name('twitter_icon');?>"
+            id="<?php echo esc_attr($this->get_field_id('twitter_icon'));?>"
+            name="<?php echo esc_attr($this->get_field_name('twitter_icon'));?>"
             value="<?php echo esc_attr($twitter_icon);?>"
             >
     </p>
